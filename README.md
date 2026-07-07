@@ -12,6 +12,8 @@ npm run preview      # 预览构建产物
 npm run docs:validate # 校验文档命名与结构（lint）
 ```
 
+CI（GitHub Actions）在 push/PR 时自动运行文档校验、站点构建与 `code/` 下 Python 示例。
+
 ## 目录结构
 
 ```text

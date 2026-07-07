@@ -1,0 +1,42 @@
+# 文档站点 CI：校验命名规范 + 生产构建 + 运行配套 Python 示例
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  docs:
+    name: Docs validate & build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+      - run: npm run docs:validate
+      - run: npm run build
+
+  python-demos:
+    name: Python learning demos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 运行 code/ 下全部配套示例（仅标准库，无第三方依赖）
+      - name: Run all Python demos
+        run: |
+          find code -name '*.py' | sort | while read -r f; do
+            echo ">>> $f"
+            python "$f"
+          done

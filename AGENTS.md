@@ -33,7 +33,7 @@
 - 生产构建：`npm run build`；本地预览构建产物：`npm run preview`
 - 文档规范校验（即本仓库的 lint）：`npm run docs:validate`（等价于 `npm run lint`）
 
-提交前请运行 `npm run docs:validate` 并本地 `npm run dev` 预览，确认公式、知识图谱与内部链接均正常。Git `pre-commit` 钩子会自动运行校验。
+提交前请运行 `npm run docs:validate` 并本地 `npm run dev` 预览，确认公式、知识图谱与内部链接均正常。Git `pre-commit` 钩子会自动运行校验。Push/PR 时 GitHub Actions（`.github/workflows/ci.yml`）会执行 `docs:validate`、`build` 及 `code/` 下全部 Python 示例。
 
 ## MCP 服务
 

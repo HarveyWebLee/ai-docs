@@ -38,7 +38,8 @@ def main() -> None:
         y = xor_network(x1, x2)
         ok = abs(y - expected) < 1e-9
         all_ok = all_ok and ok
-        print(f" {x1}  {x2} |  {y:.0f}  |  {expected}  | {'✔' if ok else '✖'}")
+        mark = "OK" if ok else "FAIL"
+        print(f" {x1}  {x2} |  {y:.0f}  |  {expected}  | {mark}")
 
     print("\n结论：", "全部一致，XOR 求解成功。" if all_ok else "存在不一致，请检查权重。")
 
