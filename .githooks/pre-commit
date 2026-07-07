@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+# Git pre-commit 钩子：提交前自动校验文档命名与结构规范。
+# 启用方式：仓库已通过 package.json 的 "prepare" 脚本自动执行
+#   git config core.hooksPath .githooks
+# 也可手动执行上述命令启用。
+
+echo "[pre-commit] 校验文档规范..."
+
+# 仅当 node 可用时运行校验，避免在无 node 环境阻塞提交
+if command -v node >/dev/null 2>&1; then
+  node scripts/validate-docs.mjs || {
+    echo "[pre-commit] 文档规范校验未通过，已阻止提交。修复后重试，或用 --no-verify 跳过（不推荐）。"
+    exit 1
+  }
+else
+  echo "[pre-commit] 未检测到 node，跳过文档校验。"
+fi
+
+exit 0
