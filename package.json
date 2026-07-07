@@ -1,0 +1,21 @@
+{
+  "name": "ai-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AI 开发学习知识库：系统化分类的文档 + 学习/测试代码",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "docs:validate": "node scripts/validate-docs.mjs",
+    "lint": "node scripts/validate-docs.mjs",
+    "prepare": "git config core.hooksPath .githooks || true"
+  },
+  "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "mermaid": "^11.4.1",
+    "vitepress": "^1.6.3",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  }
+}
