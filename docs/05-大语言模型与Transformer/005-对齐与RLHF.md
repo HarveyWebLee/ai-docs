@@ -108,6 +108,20 @@ $$
 - **误区："奖励越高越好"**：过度优化会导致 reward hacking（钻空子），KL 约束正是为治这个而设。
 - **误区："对齐一劳永逸"**：对齐存在"**对齐税**"（为了更听话可能牺牲一点能力），而且要持续迭代来应对新出现的风险。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/05-大语言模型与Transformer/005-对齐与RLHF/demo_torch.py
+```
+
 ## 七、一句话总结
 
 - 对齐让模型**有用、诚实、无害**；RLHF 用"**人类偏好 → 奖励模型 → 强化学习**"这三步来实现。

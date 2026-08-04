@@ -113,6 +113,20 @@ python code/10-生成式AI/005-LoRA低秩微调/lora_param_demo.py
 - **误区："LoRA 只能训一次"**：同一基座可挂多个 LoRA，但需注意风格冲突与版权合规。
 - **边界**：QLoRA（量化 + LoRA）进一步省显存，属 LLM 微调工程细节，见 [05/003](../05-大语言模型与Transformer/003-预训练与微调.md)。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/10-生成式AI/005-LoRA低秩微调/lora_layer_torch.py
+```
+
 ## 七、一句话总结
 
 - LoRA = $W_0 + BA$，冻结底模、只训低秩补丁；生成式里广泛用于 SD 画风/角色与 LLM 领域适配。

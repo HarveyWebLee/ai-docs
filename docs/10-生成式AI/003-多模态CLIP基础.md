@@ -108,6 +108,20 @@ python code/10-生成式AI/003-多模态CLIP基础/clip_similarity_demo.py
 - **误区："零样本一定够用"**：专业领域（医疗影像）往往仍需微调或专用模型。
 - **边界**：OpenCLIP、SigLIP 等为开源/改进版；多模态大模型（GPT-4V、LLaVA）在 CLIP 思想上扩展为"对话式视觉"。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/10-生成式AI/003-多模态CLIP基础/demo_torch.py
+```
+
 ## 七、一句话总结
 
 - CLIP = 图文双塔 + 对比学习，共享嵌入空间；支撑零样本分类与文生图条件编码。

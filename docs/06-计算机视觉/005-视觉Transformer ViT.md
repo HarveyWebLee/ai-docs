@@ -101,6 +101,20 @@ graph LR
 - **误区："patch 越大越好"**：$P$ 大则 $N$ 小、算得快，但细粒度信息损失；$P$ 小则序列长、算力涨。
 - **边界**：高分辨率图像需 Swin、局部注意力等降低 $O(N^2)$；纯 ViT 做检测/分割需 DETR、Mask2Former 等专用头（见 [004 目标检测与分割](./004-目标检测与图像分割.md)）。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/06-计算机视觉/005-视觉Transformer ViT/demo_torch.py
+```
+
 ## 七、一句话总结
 
 - ViT = patch 切分 + 线性嵌入 + 位置编码 + 标准 Transformer 编码器 + CLS 分类。
