@@ -47,4 +47,4 @@
 - LaTeX 公式依赖 `markdown-it-mathjax3` 且需在 `docs/.vitepress/config.mts` 中开启 `markdown.math: true`；知识图谱依赖 `vitepress-plugin-mermaid`（配置用 `withMermaid` 包装）。二者已配置，改动配置后需重启 dev server 才生效。
 - 侧边栏由 `docs/.vitepress/sidebar.mts` 依据目录命名**自动生成**，因此新增文档必须遵守「NN-分类名 / NNN-知识点.md」命名，否则不会出现在侧边栏或排序错乱。
 - `ignoreDeadLinks: false`：文档内部链接失效会导致 `npm run build` 失败，新增/移动文档时需同步更新引用。
-- 配套 Python 示例仅依赖标准库，可直接 `python3 code/.../xor.py` 运行，无需虚拟环境。
+- 配套 Python 示例：标准库 demo 可直接 `python3 code/.../xxx.py`；**算法文档另附 PyTorch 版** `demo_torch.py`（或 `*_torch.py`）。安装依赖：`pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu`

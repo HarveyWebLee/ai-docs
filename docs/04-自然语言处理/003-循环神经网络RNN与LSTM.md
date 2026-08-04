@@ -104,6 +104,20 @@ $$
 - **误区："RNN 已经过时无需学"**：RNN/LSTM 是理解序列建模与注意力动机的关键，且在小数据/流式场景仍有价值。
 - **边界**：正是 RNN 的串行与长依赖瓶颈，催生了可并行、直连任意位置的 [注意力/Transformer](../05-大语言模型与Transformer/001-注意力机制与自注意力.md)。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/04-自然语言处理/003-循环神经网络RNN与LSTM/demo_torch.py
+```
+
 ## 七、一句话总结
 
 - RNN 用一份共享参数的"循环记忆"（隐状态）从头读到尾处理变长序列，但记性差、有梯度消失和长依赖难题。
