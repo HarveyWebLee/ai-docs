@@ -118,6 +118,20 @@ $$
 - **误区："层数/参数越多一定越强"**：还受**数据规模、训练算力、数据质量**的制约，光堆参数不一定更好（这背后就是"缩放定律"的思想）。
 - **边界：上下文长度受限**。标准自注意力是 $O(n^2)$ 复杂度，句子越长越贵，所以长上下文要靠高效注意力和工程优化来支撑。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/05-大语言模型与Transformer/002-Transformer架构/demo_torch.py
+```
+
 ## 七、一句话总结
 
 - Transformer 一层 = **多头自注意力（环顾全局）+ 前馈网络（逐词深加工）**，再配上**残差连接（保信息、通梯度）**和**层归一化（稳训练）**。

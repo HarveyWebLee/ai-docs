@@ -113,6 +113,20 @@ python code/10-生成式AI/006-Flow-Matching基础/flow_matching_1d.py
 - **误区："步数一定越少越好"**：步数过少会累积 ODE 离散误差；需与求解器阶数、模型容量权衡。
 - **边界**：最优传输 Flow、Stochastic Interpolants 等为活跃研究方向；视频/3D flow 生成仍在演进。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/10-生成式AI/006-Flow-Matching基础/demo_torch.py
+```
+
 ## 七、一句话总结
 
 - Flow Matching 学向量场 $v_\theta$，用 ODE 从噪声流到数据；线性 CFM 目标为回归 $x_1-x_0$。
