@@ -140,6 +140,20 @@ python code/10-生成式AI/008-多LoRA合并与推理实践/multi_lora_merge_dem
 - **误区："合并顺序永远无关"**：标准线性相加无关；若含非线性后处理或部分层跳过，以实现为准。
 - **边界**：LyCORIS、LoHa 等变体合并规则略异；视频多 LoRA 生态仍在演进（见 [007 视频生成](./007-视频生成基础.md)）。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/10-生成式AI/008-多LoRA合并与推理实践/demo_torch.py
+```
+
 ## 七、一句话总结
 
 - 多 LoRA：$W_{\text{eff}} = W_0 + \sum w_i \frac{\alpha_i}{r_i} B_i A_i$；动态加载灵活，离线 merge 便于部署。

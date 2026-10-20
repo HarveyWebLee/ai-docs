@@ -112,6 +112,20 @@ $$
 - **误区："生成图一定真实可信"**：会出错细节（手指、文字），需人工或检测模型筛；涉及 deepfake 伦理与合规。
 - **边界**：视频/3D 生成在扩散框架上扩展（时序一致性、多视角），算力与数据需求更高。
 
+## PyTorch 可运行示例
+
+安装 CPU 版 PyTorch（仅需一次）：
+
+```bash
+pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+```
+
+运行 PyTorch 版示例：
+
+```bash
+python code/10-生成式AI/001-扩散模型Diffusion基础/demo_torch.py
+```
+
 ## 七、一句话总结
 
 - 扩散模型 = 前向加噪（固定）+ 反向去噪（学习）；生成从噪声迭代还原。

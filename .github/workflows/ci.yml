@@ -33,7 +33,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      # 运行 code/ 下全部配套示例（仅标准库，无第三方依赖）
+      - name: Install Python demo dependencies
+        run: pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+
+      # 运行 code/ 下全部配套示例（含 PyTorch demo；00-元规范 等纯规范文档无代码 目录）
       - name: Run all Python demos
         run: |
           find code -name '*.py' | sort | while read -r f; do

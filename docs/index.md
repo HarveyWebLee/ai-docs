@@ -21,7 +21,7 @@ features:
   - title: 知识图谱串联
     details: 00/000 提供分类依赖图、全库知识点串联图与训练闭环图；任意 Mermaid 图支持点击全屏放大、滚轮缩放与拖拽平移。
   - title: 可运行案例
-    details: code/ 目录镜像文档结构，Python 示例仅依赖标准库，npm run dev 可预览公式与 Mermaid 图谱。
+    details: code/ 镜像文档结构；算法章节附标准库 demo 与 PyTorch 版（pip install -r requirements.txt）。npm run dev 预览公式与 Mermaid。
   - title: 质量保障
     details: docs:validate 校验命名与总览引用；GitHub Actions 自动构建站点并跑全部示例。
 ---
